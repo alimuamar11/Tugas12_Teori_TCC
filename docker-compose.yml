@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+    web:
+        image: nginx:latest
+        ports:
+            - "9900:80"
+        volumes:
+            - ./index:/index
+            - ./site.conf:/etc/nginx/conf.d/default.conf
+        networks:
+            - index-network
+    php:
+        image: php:fpm
+        volumes:
+            - ./index:/index
+        networks:
+            - index-network
+
+networks:
+    index-network:
+        driver: bridge
