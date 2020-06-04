@@ -4,6 +4,13 @@ services:
     build: .
     ports:
       - "5000:5000"
+####### add a bind mount ##########################
+#Agar tidak me rebuild docker compose (docker-compose up) ketika melakukan edit pada aplikasi kita (app.py)
+    volumes:
+        - .:/code
+    environment:
+        FLASK_ENV: development
+####################################################
   redis:
     image: "redis:alpine"
 

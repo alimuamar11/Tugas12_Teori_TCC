@@ -44,3 +44,10 @@ The redis service uses a public Redis image pulled from the Docker Hub registry.
 7. Build and run your app with Compose
 
 8. Lets go to web browser
+
+## Note
+`docker-compose ps`
+`docker-compose up -d` Untuk menjalankan dalam mode background (detached)
+`docker-compose stop`
+`docker-compose --help`
+`docker-compose down --volumes`
